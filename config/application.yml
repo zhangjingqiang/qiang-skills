@@ -3,11 +3,14 @@ defaults: &defaults
 development:
   <<: *defaults
   domain: http://0.0.0.0:3000
+  host: localhost:3000
 
 test:
   <<: *defaults
   domain: http://0.0.0.0:3000
+  host: localhost:3000
 
 production:
   <<: *defaults
   domain: http://qiang-skills.herokuapp.com
+  host: qiang-skills.herokuapp.com
