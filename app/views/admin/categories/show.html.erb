@@ -1,0 +1,60 @@
+<h2>Show</h2>
+
+<table class="table table-bordered table-striped">
+  <colgroup>
+    <col class="span1">
+    <col class="span7">
+  </colgroup>
+  <thead>
+    <tr>
+      <th width="15%">Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+	Name
+      </td>
+      <td>
+	<%= @category.name %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+	Description
+      </td>
+      <td>
+	<%= simple_format(@category.description) %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+  Position
+      </td>
+      <td>
+  <%= @category.position %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+	Created At
+      </td>
+      <td>
+	<%= @category.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+	Updated At
+      </td>
+      <td>
+	<%= @category.updated_at.strftime('%Y/%m/%d %H:%M:%S') %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<%= link_to 'Edit', edit_admin_category_path(@category), class: "btn btn-success" %>
+<%= link_to 'Delete', admin_category_path(@category), method: :delete, data: { confirm: 'Are you sure you want to delete?' }, class: "btn btn-danger" %>
+<%= link_to 'Back', admin_categories_path, class: "btn btn-default" %>

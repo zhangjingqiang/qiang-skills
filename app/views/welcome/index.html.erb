@@ -1,0 +1,29 @@
+<div class="col-xs-12 col-sm-9">
+  <% if !@hero.nil? %>
+  <div class="jumbotron">
+    <h1><%= @hero.try(:title) %></h1>
+    <p><%= @hero.try(:description) %></p>
+  </div>
+  <% end %>
+  <div class="row">
+    <% @categories.each do |category| %>
+      <div class="col-6 col-sm-6 col-lg-4">
+	<h2><%= category.name %></h2>
+	<p><%= category.description %></p>
+	<p><a class="btn btn-default" href="<%= categories_show_path(category) %>">View details &raquo;</a></p>
+      </div><!--/span-->
+    <% end %>
+  </div><!--/row-->
+</div><!--/span-->
+<% if @categories.present? %>
+<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+  <div class="well sidebar-nav">
+    <ul class="nav">
+      <li>Categories</li>
+      <% @categories.each do |category| %>
+	<li><a href="<%= categories_show_path(category) %>"><%= category.name %></a></li>
+      <% end %>
+    </ul>
+  </div><!--/.well -->
+</div><!--/span-->
+<% end %>

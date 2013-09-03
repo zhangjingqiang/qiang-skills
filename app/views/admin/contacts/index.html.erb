@@ -1,0 +1,38 @@
+<h2>List</h2>
+
+<div class="bs-docs-example">
+  <table class="table">
+    <thead>
+      <tr>
+	<th width="10%"></th>
+	<th width="">Subject</th>
+	<th width="20%">Created At</th>
+	<th width="20%">Updated At</th>
+	<th width="20%"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @contacts.each_with_index do |contact,index| %>
+	<tr>
+	  <td><%= index + 1 %></td>
+	  <td><%= truncate(contact.subject, length: 20, omission: '...') %></td>
+	  <td><%= contact.created_at.strftime('%Y/%m/%d %H:%M:%S') %></td>
+	  <td><%= contact.updated_at.strftime('%Y/%m/%d %H:%M:%S') %></td>
+	  <td style="text-align:center;">
+	    <%= link_to admin_contact_path(contact), :class => "btn btn-info" do %>
+	      Show
+	    <% end %>
+	    <%= link_to edit_admin_contact_path(contact), :class => "btn btn-success" do %>
+	      Edit
+	    <% end %>
+	    <%= link_to admin_contact_path(contact), method: :delete, data: { confirm: 'Are you sure you want to delete?' }, :class => "btn btn-danger" do %>
+	      Delete
+	    <% end %>
+	  </td>
+	</tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= will_paginate @contacts, renderer: BootstrapPagination::Rails, bootstrap: 3 %>

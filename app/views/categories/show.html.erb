@@ -1,0 +1,29 @@
+<% color = %w[primary success info warning danger] %>
+<div class="col-xs-12 col-sm-9">
+  <div class="panel panel-<%= color.sample %>">
+    <div class="panel-heading">
+      <h3 class="panel-title"><%= @category.name %></h3>
+    </div>
+    <div class="panel-body">
+      <%= simple_format(@category.description) %>
+    </div>
+  </div>
+  <% @skills.each do |skill| %>
+    <div class="bs-callout bs-callout-<%= color.sample %>">
+      <h4><%= skill.name %><span class="badge pull-right"><%= skill.level %></span></h4>
+      <p><%= skill.description %></p>
+    </div>
+  <% end %>
+</div><!--/span-->
+<% if @categories.present? %>
+  <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+    <div class="well sidebar-nav">
+      <ul class="nav">
+	<li>Categories</li>
+	<% @categories.each do |category| %>
+	  <li><a href="<%= categories_show_path(category) %>"><%= category.name %></a></li>
+	<% end %>
+      </ul>
+    </div><!--/.well -->
+  </div><!--/span-->
+<% end %>
