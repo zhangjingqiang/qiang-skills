@@ -4,7 +4,7 @@ class Admin::CategoriesController < ApplicationController
   layout 'admin/application'
 
   def index
-    @categories = Category.paginate(:page => params[:page])
+    @categories = Category.paginate(:page => params[:page]).order("position")
   end
 
   def show

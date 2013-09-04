@@ -4,7 +4,7 @@ class Admin::SkillsController < ApplicationController
   layout 'admin/application'
 
   def index
-    @skills = Skill.paginate(:page => params[:page])
+    @skills = Skill.paginate(:page => params[:page]).order("position")
   end
 
   def show
