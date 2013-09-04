@@ -11,48 +11,55 @@
     <!-- Static navbar -->
     <div class="navbar navbar-default navbar-static-top">
       <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="<%= admin_path %>">Admin</a>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li<%= ' class=active' if params[:controller] == 'admin/categories' %>>
-              <%= link_to "Category", admin_categories_path %>
-            </li>
-            <li<%= ' class=active' if params[:controller] == 'admin/skills' %>>
-              <%= link_to "Skill", admin_skills_path %>
-            </li>
-            <li<%= ' class=active' if params[:controller] == 'admin/heros' %>>
-              <%= link_to "Hero", admin_heros_path %>
-            </li>
-            <li<%= ' class=active' if params[:controller] == 'admin/abouts' %>>
-              <%= link_to "About", admin_abouts_path %>
-            </li>
-            <li<%= ' class=active' if params[:controller] == 'admin/contacts' %>>
-              <%= link_to "Contact", admin_contacts_path %>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <% if current_admin %>
-            <li>
-              <%= link_to destroy_admin_session_path, :method=>'delete' do %>
-                Logout
-              <% end %>
-            </li>
-            <% end %>
-          </ul>
-        </div><!--/.nav-collapse -->
+	<div class="navbar-header">
+	  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	    <span class="icon-bar"></span>
+	  </button>
+	  <a class="navbar-brand" href="<%= admin_path %>">Admin</a>
+	</div>
+	<div class="navbar-collapse collapse">
+	  <ul class="nav navbar-nav">
+	    <li<%= ' class=active' if params[:controller] == 'admin/categories' %>>
+	    <%= link_to "Category", admin_categories_path %>
+	    </li>
+	    <li<%= ' class=active' if params[:controller] == 'admin/skills' %>>
+	    <%= link_to "Skill", admin_skills_path %>
+	    </li>
+	    <li<%= ' class=active' if params[:controller] == 'admin/heros' %>>
+	    <%= link_to "Hero", admin_heros_path %>
+	    </li>
+	    <li<%= ' class=active' if params[:controller] == 'admin/abouts' %>>
+	    <%= link_to "About", admin_abouts_path %>
+	    </li>
+	    <li<%= ' class=active' if params[:controller] == 'admin/contacts' %>>
+	    <%= link_to "Contact", admin_contacts_path %>
+	    </li>
+	  </ul>
+	  <ul class="nav navbar-nav navbar-right">
+	    <% if current_admin %>
+	      <li>
+	      <%= link_to destroy_admin_session_path, :method=>'delete' do %>
+		Logout
+	      <% end %>
+	      </li>
+	    <% end %>
+	  </ul>
+	</div><!--/.nav-collapse -->
       </div>
     </div>
 
     <div class="container">
       <%= render 'layouts/messages' %>
       <%= yield %>
+
+      <hr>
+      <!-- Site footer -->
+      <div class="footer">
+	<p>&copy; <%= Time.now.year %></p>
+      </div>
+
     </div> <!-- /container -->
     <%= render 'layouts/admin/javascript' %>
   </body>
