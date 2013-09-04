@@ -1,0 +1,14 @@
+<% color = %w[primary success info warning danger] %>
+<% @categories.each do |category| %>
+  <div class="col-xs-12 col-sm-12">
+    <div class="panel panel-<%= color.sample %>">
+      <div class="panel-heading">
+	<h3 class="panel-title"><%= category.name %><a href="<%= categories_show_path(category) %>"><span class="glyphicon glyphicon-arrow-right pull-right"></span></a></h3>
+
+      </div>
+      <div class="panel-body">
+	<%= simple_format(category.description) %>
+      </div>
+    </div>
+  </div><!--/span-->
+<% end %>

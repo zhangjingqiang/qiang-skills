@@ -1,4 +1,5 @@
 QiangSkills::Application.routes.draw do
+  get "categories", to: "categories#index"
   get "categories/:id", to: "categories#show", as: "categories_show"
   get 'about', to:'about#index'
   get 'contact', to:'contact#new'
