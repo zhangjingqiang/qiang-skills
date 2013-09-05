@@ -15,15 +15,4 @@
     </div>
   <% end %>
 </div><!--/span-->
-<% if @categories.present? %>
-  <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-    <div class="well sidebar-nav">
-      <ul class="nav">
-	<li>Categories</li>
-	<% @categories.each do |category| %>
-	  <li><a href="<%= categories_show_path(category) %>"><%= category.name %></a></li>
-	<% end %>
-      </ul>
-    </div><!--/.well -->
-  </div><!--/span-->
-<% end %>
+<%= render 'layouts/sidebar' %>
