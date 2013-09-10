@@ -8,7 +8,7 @@ class ContactController < ApplicationController
 
     respond_to do |format|
       if @contact.save
-        # ContactMailer.notice_email(@contact).deliver
+        ContactMailer.notice_email(@contact).deliver
         format.html { redirect_to contact_path, notice: 'Successfully created.' }
         format.json { render action: 'show', status: :created, location: @contact }
       else
