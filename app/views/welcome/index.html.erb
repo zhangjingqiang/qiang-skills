@@ -9,11 +9,11 @@
   <div class="row">
     <% @categories.each_with_index do |category, index| %>
       <% if index < 12 %>
-	<div class="col-6 col-sm-6 col-lg-4">
-	  <h2><%= category.name %></h2>
-	  <p><%= category.description %></p>
-	  <p><a class="btn btn-default" href="<%= categories_show_path(category) %>">View details &raquo;</a></p>
-	</div><!--/span-->
+        <div class="col-6 col-sm-6 col-lg-4">
+          <h2><%= category.name %></h2>
+          <p><%= category.description %></p>
+          <p><a class="btn btn-default" href="<%= categories_show_path(category) %>">View details &raquo;</a></p>
+        </div><!--/span-->
       <% end %>
     <% end %>
   </div><!--/row-->
