@@ -5,13 +5,13 @@
     <%= form_for @about, :url => { :action => "create" }, :html => { :class => "form-horizontal" } do |f| %>
       <%= render :partial =>'form', :locals => {:action => 'new', :f => f} %>
       <div class="form-group">
-	<label class="col-lg-2 control-label"></label>
-	<div class="col-lg-8">
-	  <%= f.submit "Create", class: "btn btn-primary" %>
-	  <%= link_to 'Back', admin_abouts_path, class: "btn btn-default" %>
-	</div>
+        <label class="col-lg-2 control-label"></label>
+        <div class="col-lg-8">
+          <%= f.submit "Create", class: "btn btn-primary" %>
+          <%= link_to 'Back', admin_abouts_path, class: "btn btn-default" %>
+        </div>
       </div>
     <% end %>
   </div>
-</div>                                                                                  
+</div>
 

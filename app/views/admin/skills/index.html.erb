@@ -4,34 +4,36 @@
   <table class="table">
     <thead>
       <tr>
-	<th width="10%"></th>
-	<th width="">Name</th>
-	<th width="">Description</th>
-	<th width="20%">Created At</th>
-	<th width="20%">Updated At</th>
-	<th width="20%"></th>
+        <th width="10%"></th>
+        <th width="">Name</th>
+        <th width="">Description</th>
+        <th width="">Category</th>
+        <th width="20%">Created At</th>
+        <th width="20%">Updated At</th>
+        <th width="20%"></th>
       </tr>
     </thead>
     <tbody>
       <% @skills.each_with_index do |skill,index| %>
-	<tr>
-	  <td><%= index + 1 %></td>
-	  <td><%= skill.name %></td>
-	  <td><%= truncate(skill.description, length: 20, omission: '...') %></td>
-	  <td><%= skill.created_at.strftime('%Y/%m/%d %H:%M:%S') %></td>
-	  <td><%= skill.updated_at.strftime('%Y/%m/%d %H:%M:%S') %></td>
-	  <td style="text-align:center;">
-	    <%= link_to admin_skill_path(skill), :class => "btn btn-info" do %>
-	      Show
-	    <% end %>
-	    <%= link_to edit_admin_skill_path(skill), :class => "btn btn-success" do %>
-	      Edit
-	    <% end %>
-	    <%= link_to admin_skill_path(skill), method: :delete, data: { confirm: 'Are you sure you want to delete?' }, :class => "btn btn-danger" do %>
-	      Delete
-	    <% end %>
-	  </td>
-	</tr>
+        <tr>
+          <td><%= index + 1 %></td>
+          <td><%= skill.name %></td>
+          <td><%= truncate(skill.description, length: 20, omission: '...') %></td>
+          <td><%= category(skill.category_id) %></td>
+          <td><%= skill.created_at.strftime('%Y/%m/%d %H:%M:%S') %></td>
+          <td><%= skill.updated_at.strftime('%Y/%m/%d %H:%M:%S') %></td>
+          <td style="text-align:center;">
+            <%= link_to admin_skill_path(skill), :class => "btn btn-info" do %>
+              Show
+            <% end %>
+            <%= link_to edit_admin_skill_path(skill), :class => "btn btn-success" do %>
+              Edit
+            <% end %>
+            <%= link_to admin_skill_path(skill), method: :delete, data: { confirm: 'Are you sure you want to delete?' }, :class => "btn btn-danger" do %>
+              Delete
+            <% end %>
+          </td>
+        </tr>
       <% end %>
     </tbody>
   </table>
