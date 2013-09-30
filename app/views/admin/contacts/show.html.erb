@@ -14,50 +14,50 @@
   <tbody>
     <tr>
       <td>
-	Name
+        Name
       </td>
       <td>
-	<%= @contact.name %>
-      </td>
-    </tr>
-    <tr>
-      <td>
-  Email
-      </td>
-      <td>
-  <%= @contact.email %>
+        <%= @contact.name %>
       </td>
     </tr>
     <tr>
       <td>
-  Subject
+        Email
       </td>
       <td>
-  <%= @contact.subject %>
-      </td>
-    </tr>
-    <tr>
-      <td>
-	Message
-      </td>
-      <td>
-	<%= simple_format(@contact.message) %>
+        <%= @contact.email %>
       </td>
     </tr>
     <tr>
       <td>
-	Created At
+        Subject
       </td>
       <td>
-	<%= @contact.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+        <%= @contact.subject %>
       </td>
     </tr>
     <tr>
       <td>
-	Updated At
+        Message
       </td>
       <td>
-	<%= @contact.updated_at.strftime('%Y/%m/%d %H:%M:%S') %>
+        <%= simple_format(@contact.message) %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Created At
+      </td>
+      <td>
+        <%= @contact.created_at.strftime('%Y/%m/%d %H:%M:%S') %>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Updated At
+      </td>
+      <td>
+        <%= @contact.updated_at.strftime('%Y/%m/%d %H:%M:%S') %>
       </td>
     </tr>
   </tbody>

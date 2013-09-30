@@ -14,9 +14,9 @@
       </tr>
     </thead>
     <tbody>
-      <% @skills.each_with_index do |skill,index| %>
+      <% @skills.each do |skill| %>
         <tr>
-          <td><%= index + 1 %></td>
+          <td><%= skill.id %></td>
           <td><%= skill.name %></td>
           <td><%= truncate(skill.description, length: 20, omission: '...') %></td>
           <td><%= category(skill.category_id) %></td>
