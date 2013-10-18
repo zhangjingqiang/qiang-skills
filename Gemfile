@@ -7,6 +7,7 @@ gem 'will_paginate', '3.0.4'
 gem "will_paginate-bootstrap", "~> 0.2.4"
 gem "devise", "~> 3.0.3"
 gem "settingslogic", "~> 2.0.9"
+gem 'newrelic_rpm'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record
