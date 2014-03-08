@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
+    @category = Category.find_by_name(params[:id])
     @categories = Category.all.order("position")
     @skills = Skill.where(category_id: @category.id).order("position")
   end
