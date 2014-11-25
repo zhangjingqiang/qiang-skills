@@ -1,5 +1,5 @@
 class ContactMailer < ActionMailer::Base
-  default from: 'from@example.com'
+  default from: ENV['EMAIL']
 
   def notice_email(contact)
     @contact = contact
