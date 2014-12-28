@@ -7,6 +7,7 @@ QiangSkills::Application.routes.draw do
   
   devise_for :admins
   get "admin", to: "admin#index"
+  get "admins", to: "admin#index"
   namespace :admin do
     resources :categories
     resources :skills
