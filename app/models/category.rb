@@ -3,5 +3,5 @@ class Category < ActiveRecord::Base
 
   validates :name, presence: true, length: { maximum: 200 }
   
-  default_scope { order('name DESC') }
+  default_scope { order('name ASC') }
 end
