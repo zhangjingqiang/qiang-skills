@@ -38,6 +38,9 @@
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
+            <li>
+              <%= link_to 'View Site', root_path, :target=>'_blank' %>
+            </li>
             <% if current_admin %>
               <li>
               <%= link_to destroy_admin_session_path, :method=>'delete' do %>
