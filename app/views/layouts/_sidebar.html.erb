@@ -8,14 +8,11 @@
         <% end %>
       </ul>
     </div>
+    <div class="well sidebar-nav">
+      <ul class="nav">
+        <li>Skills: <%= Skill.count %></li>
+        <li>Categories: <%= Category.count %></li>
+      </ul>
+    </div>
   </div>
 <% end %>
-
-<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
-  <div class="well sidebar-nav">
-    <ul class="nav">
-      <li>Skills: <%= Skill.count %></li>
-      <li>Categories: <%= Category.count %></li>
-    </ul>
-  </div>
-</div>
