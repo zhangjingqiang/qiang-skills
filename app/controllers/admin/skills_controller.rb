@@ -4,7 +4,7 @@ class Admin::SkillsController < ApplicationController
   layout 'admin/application'
 
   def index
-    @skills = Skill.paginate(:page => params[:page])
+    @skills = Skill.order("updated_at DESC").paginate(:page => params[:page])
   end
 
   def show
@@ -27,9 +27,9 @@ class Admin::SkillsController < ApplicationController
       else
         format.html { render action: 'new' }
         format.json { render json: @skill.errors, status: :unprocessable_entity }
-      end 
-    end 
-  end 
+      end
+    end
+  end
 
   def update
     respond_to do |format|
@@ -39,8 +39,8 @@ class Admin::SkillsController < ApplicationController
       else
         format.html { render action: 'edit' }
         format.json { render json: @skill.errors, status: :unprocessable_entity }
-      end 
-    end 
+      end
+    end
   end
 
   def destroy
@@ -54,7 +54,7 @@ class Admin::SkillsController < ApplicationController
   private
   def set_skill
     @skill = Skill.find(params[:id])
-  end 
+  end
 
   def skill_params
     params.require(:skill).permit(:category_id, :name, :description, :position, :level)

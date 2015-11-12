@@ -11,7 +11,7 @@
   <% @skills.each do |skill| %>
     <div class="bs-callout bs-callout-<%= color.sample %>">
       <h4><%= skill.name %><span class="badge pull-right"><%= skill.level %></span></h4>
-      <p><%= auto_link skill.description %></p>
+      <p><%= sanitize(auto_link(skill.description).html_safe) %></p>
     </div>
   <% end %>
 </div><!--/span-->
