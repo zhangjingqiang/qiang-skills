@@ -51,6 +51,14 @@ class Admin::SkillsController < ApplicationController
     end
   end
 
+  def search
+    if params[:q]
+      @skills = Skill.where("name LIKE ?", "%" + params[:q] + "%").paginate(:page => params[:page])
+    else
+      redirect_to action: index
+    end
+  end
+
   private
   def set_skill
     @skill = Skill.find(params[:id])

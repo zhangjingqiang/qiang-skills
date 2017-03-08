@@ -27,9 +27,9 @@ class Admin::CategoriesController < ApplicationController
       else
         format.html { render action: 'new' }
         format.json { render json: @category.errors, status: :unprocessable_entity }
-      end 
-    end 
-  end 
+      end
+    end
+  end
 
   def update
     respond_to do |format|
@@ -39,8 +39,8 @@ class Admin::CategoriesController < ApplicationController
       else
         format.html { render action: 'edit' }
         format.json { render json: @category.errors, status: :unprocessable_entity }
-      end 
-    end 
+      end
+    end
   end
 
   def destroy
@@ -51,10 +51,18 @@ class Admin::CategoriesController < ApplicationController
     end
   end
 
+  def search
+    if params[:q]
+      @categories = Category.where("name LIKE ?", "%" + params[:q] + "%").paginate(:page => params[:page])
+    else
+      redirect_to action: index
+    end
+  end
+
   private
   def set_category
     @category = Category.find(params[:id])
-  end 
+  end
 
   def category_params
     params.require(:category).permit(:name, :description, :position)
