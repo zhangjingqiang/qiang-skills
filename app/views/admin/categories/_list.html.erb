@@ -25,6 +25,7 @@
         <th width="10%"></th>
         <th width="">Name</th>
         <th width="">Description</th>
+        <th width="">Position</th>
         <th width="20%">Created At</th>
         <th width="20%">Updated At</th>
         <th width="20%"></th>
@@ -36,6 +37,7 @@
           <td><%= category.id %></td>
           <td><%= category.name %></td>
           <td><%= truncate(category.description, length: 20, omission: '...') %></td>
+          <td><%= category.position %></td>
           <td><%= category.created_at.strftime('%Y/%m/%d %H:%M:%S') %></td>
           <td><%= category.updated_at.strftime('%Y/%m/%d %H:%M:%S') %></td>
           <td style="text-align:center;">
