@@ -2,7 +2,7 @@
   <% if !@hero.nil? %>
     <div class="jumbotron">
       <h1><%= @hero.try(:title) %></h1>
-      <p><%= @hero.try(:description) %></p>
+      <p><%= auto_link(simple_format(@hero.try(:description))) %></p>
       <p><a class="btn btn-primary btn-lg" href="<%= categories_path %>">Learn more »</a></p>
     </div>
   <% end %>
