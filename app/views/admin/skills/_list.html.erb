@@ -25,6 +25,7 @@
         <th width="10%"></th>
         <th width="">Name</th>
         <th width="">Description</th>
+        <th width="">Position</th>
         <th width="">Category</th>
         <th width="20%">Created At</th>
         <th width="20%">Updated At</th>
@@ -37,6 +38,7 @@
           <td><%= skill.id %></td>
           <td><%= skill.name %></td>
           <td><%= truncate(skill.description, length: 20, omission: '...') %></td>
+          <td><%= skill.position %></td>
           <td><%= category(skill.category_id) %></td>
           <td><%= skill.created_at.strftime('%Y/%m/%d %H:%M:%S') %></td>
           <td><%= skill.updated_at.strftime('%Y/%m/%d %H:%M:%S') %></td>
