@@ -1,4 +1,6 @@
 defaults: &defaults
+  site_name: Qiang Skills
+  top_count: 9
   smtp_address: smtp.mandrillapp.com
 
 development:

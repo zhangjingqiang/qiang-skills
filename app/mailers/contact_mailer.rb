@@ -3,6 +3,6 @@ class ContactMailer < ActionMailer::Base
 
   def notice_email(contact)
     @contact = contact
-    mail(to: ENV['EMAIL'], subject: '[Qiang Skills]New contact is coming!!!')
+    mail(to: ENV['EMAIL'], subject: "[#{Settings.site_name}]New contact is coming!!!")
   end
 end
